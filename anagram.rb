@@ -19,6 +19,19 @@
 #   puts "sorry, the length of the 2 strings does not match!"
 # end
 
-anagram_array = ["tap", "spot", "mat", "pots", "tops", "pat", "pit", "tam", "tip", "melt"]
- 
+# anagram_array = ["tap", "spot", "mat", "pots", "tops", "pat", "pit", "tam", "tip", "melt"]
 
+# anagram_array.each do |p|
+#   # p_split = p.split("")
+#   p_sort = anagram_array.sort
+#   puts p_sort
+
+# end
+
+anagram_array = ["tap", "stop", "mat", "stop", "stop", "tap", "pit", "mat", "pit", "melt"]
+
+anagram_array.each do |p|
+  p_ch = p.chars
+  p_sr = p_ch.sort
+  puts p_sr.join
+end
