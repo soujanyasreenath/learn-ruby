@@ -1,4 +1,4 @@
-puts "Enter the palindrome ... "
+puts "Enter the string ... "
 str = gets.chomp
 
 pal_str = str.reverse
