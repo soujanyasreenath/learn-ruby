@@ -30,7 +30,7 @@ def anagram_input
   end
 end
 
-def dup_array
+def dup_array_approach_1
   duplicate_array = ["tap", "stop", "mat", "stop", "melt", "malt", "stop", "tap", "pit", "mat", "pit", "melt"]
   sorted_duplicate_array = duplicate_array.sort
   puts "finding duplicate in #{duplicate_array}"
@@ -46,16 +46,29 @@ def dup_array
   end
 end
 
+def dup_array_approach_2
+  duplicate_array = ["tap", "stop", "mat", "stop", "melt", "malt", "stop", "tap", "pit", "mat", "pit", "melt"]
+
+  puts "Finding duplicate in #{duplicate_array}"
+
+  duplicate_array_sorted = duplicate_array.group_by do |duplicate|
+    duplicate.chars.sort
+  end.values
+  puts "Dulicates : #{duplicate_array_sorted}"
+end
+
 def ana_array
   anagram_array = ["tap", "stop", "mat", "tops", "pots", "pat", "pit", "tam", "tip", "melt"]
-  i = 0
-  max = anagram_array.length 
-  anagram_array.each do |p|
-    p_join = p.chars.sort.join
-    print p_join
-  end
+  print "initial array : #{anagram_array} \n"
+
+  anagram_sorted = anagram_array.group_by do |word|
+    word.chars.sort
+  end.values
+
+  puts "Sorted array : #{anagram_sorted}"
 end
   
 # anagram_input
-# dup_array
-ana_array
+# dup_array_approach_1
+dup_array_approach_2
+# ana_array
